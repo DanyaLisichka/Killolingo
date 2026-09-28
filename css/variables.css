@@ -4,26 +4,37 @@
 :root {
     /* ===== ЦВЕТА ===== */
     /* Основные (бренд) */
-    --color-primary: #2563eb;          /* Основной синий — кнопки, ссылки */
-    --color-primary-hover: #1d4ed8;    /* Синий при наведении */
-    --color-primary-light: #dbeafe;    /* Светло-синий фон */
+    --color-primary: #c71b1b;          /* Основной синий — кнопки, ссылки */
+    --color-primary-hover: #ff0d00;    /* Синий при наведении */
+    ----color-primary-light: #3a1717;     /* Светло-синий фон */
 
     /* Акцентный */
     --color-accent: #f59e0b;           /* Оранжевый — выделение, CTA-акценты */
     --color-accent-hover: #d97706;
 
     /* Текстовые */
-    --color-text-main: #1f2937;        /* Основной текст */
+    --color-text-main: #b5b5b5;        /* Основной текст */
     --color-text-secondary: #6b7280;   /* Второстепенный текст */
     --color-text-inverse: #ffffff;     /* Текст на темном фоне */
 
     /* Фоны */
-    --color-bg-main: #ffffff;          /* Основной фон */
+    --color-bg-main: #121212;          /* Основной фон */
+    --color-bg-surface: #1b1b1b;
+
+    --color-bg-surface-hover: #242424;
     --color-bg-light: #f9fafb;         /* Светлый фон секций */
     --color-bg-dark: #111827;          /* Темный фон (футер) */
 
+    --color-bg-main: #121212;
+    --color-bg-surface: #1b1b1b;
+    --color-bg-surface-hover: #242424;
+    --color-bg-surface: #1b1b1b;
+    --color-bg-surface-hover: #242424;
+
+    
+
     /* Служебные */
-    --color-border: #e5e7eb;           /* Границы */
+    --color-border: #2a2a2a;          /* Границы */
     --color-error: #dc2626;            /* Ошибки в форме */
     --color-success: #16a34a;          /* Успех */
 
@@ -75,3 +86,5 @@
     --container-width: 1200px;
     --container-padding: 20px;
 }
+
+
