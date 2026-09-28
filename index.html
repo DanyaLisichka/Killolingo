@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Языковая школа — Заговори на новом языке</title>
-    <meta name="description" content="Современная языковая школа. Индивидуальные занятия с лучшими преподавателями. Английский, немецкий, французский, испанский, китайский.">
+    <title>Killolingo</title>
+    <meta name="description" content="Пиздец нових поколеня">
 
     <!-- 1. Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- 2. Сброс стилей -->
     <link rel="stylesheet" href="css/reset.css">
@@ -20,379 +22,165 @@
     <!-- 4. Общие стили -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- 4.1. Градиентный фон -->
-    <link rel="stylesheet" href="css/gradient.css">
-
     <!-- 5. Стили компонентов -->
     <link rel="stylesheet" href="css/components/hero.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- 6. Стили для новых секций -->
         <!-- 6. Стили для новых секций -->
-    <style>
-        /* ====== Кнопка "Записаться" ====== */
-        .btn {
-            display: inline-block;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+         <!-- 6. НЕТ БОЛЬШЕ НИКАКИХ СТИЛЕЙ ПАХПХАПХАПХАХААВХАХХАХА-->
 
-        .btn--primary {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
-            color: #ffffff;
-            box-shadow: 0 8px 25px rgba(238, 90, 111, 0.45);
-        }
-
-        .btn--primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn--primary:hover::before {
-            left: 100%;
-        }
-
-        .btn--primary:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 14px 35px rgba(238, 90, 111, 0.6);
-            background: linear-gradient(135deg, #ff7b7b 0%, #f06a7f 50%, #d45579 100%);
-        }
-
-        .btn--primary:active {
-            transform: translateY(-1px) scale(0.99);
-            box-shadow: 0 6px 18px rgba(238, 90, 111, 0.5);
-        }
-
-        .btn--large {
-            padding: 20px 48px;
-            font-size: 18px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 8px 25px rgba(238, 90, 111, 0.45), 0 0 0 0 rgba(238, 90, 111, 0.7); }
-            70% { box-shadow: 0 8px 25px rgba(238, 90, 111, 0.45), 0 0 0 18px rgba(238, 90, 111, 0); }
-        }
-
-        .btn--pulse {
-            animation: pulse 2.5s infinite;
-        }
-
-        /* ====== Секция "О школе" ====== */
-        .about {
-            padding: 90px 0;
-            /* Затемнённая подложка для читаемости */
-            background: rgba(20, 20, 40, 0.55);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .about__header {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 60px;
-        }
-
-        .about__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-        }
-
-        .about__title span {
-            background: linear-gradient(135deg, #ffb3c1, #a0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ✅ Белый текст под заголовком */
-        .about__lead {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 18px;
-            line-height: 1.75;
-            color: #ffffff;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Сетка карточек */
-        .about__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .about__card {
-            /* Полупрозрачный тёмный фон — белый текст читается идеально */
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-        }
-
-        .about__card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.16);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-        }
-
-        .about__icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            margin-bottom: 22px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        /* ✅ Белые заголовки карточек */
-        .about__card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 14px;
-        }
-
-        /* ✅ Белый текст описаний */
-        .about__card p {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 15px;
-            line-height: 1.75;
-            color: #ffffff;
-            opacity: 0.95;
-        }
-
-        /* ====== Статистика ====== */
-        .stats {
-            padding: 70px 0;
-            background: linear-gradient(135deg, rgba(20, 20, 40, 0.85) 0%, rgba(60, 30, 80, 0.85) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: #ffffff;
-        }
-
-        .stats__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stats__item {
-            position: relative;
-        }
-
-        .stats__number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 56px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffb3c1, #a0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        /* ✅ Белые подписи статистики */
-        .stats__label {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
-            color: #ffffff;
-            letter-spacing: 0.3px;
-            opacity: 0.95;
-        }
-
-        /* ====== Языки ====== */
-        .languages {
-            padding: 90px 0;
-            background: rgba(20, 20, 40, 0.55);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .languages__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-        }
-
-        /* ✅ Белый подзаголовок */
-        .languages__subtitle {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 18px;
-            color: #ffffff;
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 60px;
-            line-height: 1.75;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-        }
-
-        .languages__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-        }
-
-        .language-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 18px;
-            padding: 32px 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            cursor: pointer;
-        }
-
-        .language-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .language-card__flag {
-            font-size: 48px;
-            display: block;
-            margin-bottom: 14px;
-        }
-
-        /* ✅ Белое название языка */
-        .language-card__name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-
-        /* ✅ Белый уровень */
-        .language-card__level {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 13px;
-            color: #ffffff;
-            opacity: 0.85;
-        }
-
-        /* ====== Финальный CTA ====== */
-        .cta {
-            padding: 90px 0;
-            background: linear-gradient(135deg, rgba(238, 90, 111, 0.9) 0%, rgba(196, 69, 105, 0.9) 50%, rgba(118, 75, 162, 0.9) 100%);
-            color: #ffffff;
-            text-align: center;
-        }
-
-        .cta__title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: #ffffff;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ✅ Чистый белый текст */
-        .cta__text {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 18px;
-            max-width: 620px;
-            margin: 0 auto 36px;
-            line-height: 1.75;
-            color: #ffffff;
-        }
-
-        .btn--light {
-            background: #ffffff;
-            color: #c44569;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn--light:hover {
-            background: #ffffff;
-            color: #c44569;Индивидуальные занятия с лучшими преподавателями. Интерактивная платформа и удобный график. Начни учиться сегодня! 
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Адаптив */
-        @media (max-width: 768px) {
-            .about__title,
-            .languages__title,
-            .cta__title { font-size: 30px; }
-            .stats__number { font-size: 42px; }
-            .btn--large { padding: 16px 32px; font-size: 16px; }
-            .about, .languages, .cta { padding: 60px 0; }
-        }
-
-        .footer {
-    margin-top: 0;
-}
-
-        .hero__subtitle {
-            color: #ffffff;
-        }
-        
-    </style>
 </head>
-<body class="gradient-bg">
+<body>
 
-    <!-- <header> здесь будет верстать Алексей (задача 3) -->
+    <!-- <header> здесь будет верстать Я (задача 3) -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo.png" alt="" width="160" height="48">
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">ГЛАВНАЯ</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">КУРСЫ</a></li>
+        <li class="nav-item"><a class="nav-link" id="haha3">ЗАКЛЮЧИТЬ КОНТРАКТ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <main>
-        <!-- ============ Hero Section (Задача 6 — Борисенко) ============ -->
+        <selection class="pad">
+        </selection>
+
+        <!-- ============ Hero Section (Задача 6 — Я) ============ -->
         <section class="hero">
-            <div class="container hero__container">
-                <div class="hero__content">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Индикаторы -->
+        <div class="carousel-indicators">
+            <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Слайд 1"></button>
+
+            <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Слайд 2"></button>
+
+            <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Слайд 3"></button>
+        </div>
+
+        <!-- Слайды -->
+        <div class="carousel-inner">
+
+            <!-- Слайд 1 -->
+            <div class="carousel-item active">
+                <img src="img/1.png"
+                     class="hero__image"
+                     alt="Изучение английского языка">
+
+                <div class="hero__overlay"></div>
+
+                <div class="carousel-caption hero__content">
+
                     <h1 class="hero__title">
-                        Заговори на новом языке уже через месяц!
+                        Знакомьтесь,<br>
+                        <span>Killolingo</span>
                     </h1>
+
                     <p class="hero__subtitle">
-                        Индивидуальные занятия с лучшими преподавателями. 
-                        Интерактивная платформа и удобный график. 
-                        Начни учиться сегодня!
+                        Ваш личный люцифер, позволющий вам  выучить язык за месяц
                     </p>
-                    <a href="booking.html" class="btn btn--primary btn--large btn--pulse">
-                        🎓 Записаться на бесплатный урок
+
+                    <a id="haha4" class="btn btn--primary">
+                        Вступить в игру
                     </a>
                 </div>
             </div>
-        </section>
+
+            <!-- Слайд 2 -->
+            <div class="carousel-item">
+                <img src="img/m2.jpg"
+                     class="hero__image"
+                     alt="Разговорная практика">
+
+                <div class="hero__overlay"></div>
+
+                <div class="carousel-caption hero__content">
+                    <span class="hero__eyebrow">НОВИНКА</span>
+
+                    <h2 class="hero__title">
+                        Говори<br>
+                        <span>правильно</span>
+                    </h2>
+
+                    <p class="hero__subtitle">
+                        Наши новые курсы помогут Вам избавиться от любого акцента (но не без боли)
+                    </p>
+
+                    <a href="courses.html" class="btn btn--primary">
+                        Узнать больше
+                    </a>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="carousel-item">
+                <img src="img/m3.jpg"
+                     class="hero__image"
+                     alt="Изучение иностранных языков">
+
+                <div class="hero__overlay"></div>
+
+                <div class="carousel-caption hero__content">
+
+                    <h2 class="hero__title">
+                        Выбери свой<br>
+                        <span>круг ада</span>
+                    </h2>
+
+                    <p class="hero__subtitle">
+                        Мы предлагаем разного рода языка, пока вы не стали дегенератом 
+                    </p>
+
+                    <a href="#languages" class="btn btn--primary">
+                        Смотреть языки
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Стрелка назад -->
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+
+        <!-- Стрелка вперёд -->
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+</section>
 
         <!-- ============ О школе ============ -->
         <section class="about" id="about">
@@ -402,40 +190,39 @@
                         О нашей <span>языковой школе</span>
                     </h2>
                     <p class="about__lead">
-                        Мы помогаем людям со всего мира свободно говорить на иностранных языках 
-                        с 2015 года. Наша миссия — сделать обучение живым, увлекательным 
-                        и результативным. Никакой зубрёжки — только практика, общение и реальные 
-                        ситуации из жизни.
+                        Наши  репетиторы помогали свободно говорить на иностранных языках со всего мира, но 
+                        с 2015 года всё поменялось. После того, как один из наших репетиторов принял таблетку Х,
+                    в нашем цыганском домике начался сущий кошмар: наш репетитор покончил с собой прямо на наших глазах.
+                     Теперь наша миссия — заставить всех людей пожалеть
+                        о том дне, когда люди решили выучить новый язык. У нас есть всё, чтобы заставить заплакать каждого
                     </p>
                 </div>
 
                 <div class="about__grid">
                     <article class="about__card">
-                        <div class="about__icon">👩‍🏫</div>
-                        <h3>Опытные преподаватели</h3>
-                        <p>Все наши педагоги — носители языка или сертифицированные специалисты 
-                           с опытом работы от 5 лет. Каждый проходит строгий отбор.</p>
-                    </article>
-
-                    <article class="about__card">
-                        <div class="about__icon">💻</div>
+                        <div class="about__icon">
+                            <img src="img/slack.svg">
+                        </div>
                         <h3>Интерактивная платформа</h3>
-                        <p>Занимайтесь из любой точки мира. Все материалы, домашние задания 
-                           и прогресс — в одном удобном личном кабинете.</p>
+                        <p>Кладите горячую картошку в рот, вырезайте на своей запястье иероглифы. Делайте всё - чтобы достить цели </p>
                     </article>
 
                     <article class="about__card">
-                        <div class="about__icon">🎯</div>
-                        <h3>Индивидуальный подход</h3>
-                        <p>Программа подбирается под ваши цели: путешествия, работа, 
-                           экзамены или переезд. Никаких шаблонных курсов.</p>
+                        <div class="about__icon">
+                            <img src="img/tool.svg">
+                        </div>
+                        <h3>Естественный подход</h3>
+                        <p>Программа не подбирается под ваши цели: путешествия, работа, 
+                           экзамены или переезд. Ваша никчёмная жизнь никого не волнует</p>
                     </article>
 
                     <article class="about__card">
-                        <div class="about__icon">🗓️</div>
-                        <h3>Гибкий график</h3>
-                        <p>Занимайтесь утром, днём или поздно вечером. Переносите занятия 
-                           без штрафов — мы подстраиваемся под вас.</p>
+                        <div class="about__icon">
+                            <img src="img/trending-up.svg">
+                        </div>
+                        <h3>Стабильный график</h3>
+                        <p>Не важно, где вы пропадаете утром, днём и вечером. Переносите занятия на завтра
+                         — мы выливаем с вас 2 литра крови</p>
                     </article>
                 </div>
             </div>
@@ -447,18 +234,19 @@
                 <div class="stats__grid">
                     <div class="stats__item">
                         <span class="stats__number">5000+</span>
-                        <span class="stats__label">Довольных студентов</span>
+                        <span class="stats__label">Мёртвых студентов</span>
                     </div>
                     <div class="stats__item">
-                        <span class="stats__number">12</span>
-                        <span class="stats__label">Языков для изучения</span>
-                    </div>
-                    <div class="stats__item">
-                        <span class="stats__number">98%</span>
+                        <span class="stats__number">6%</span>
                         <span class="stats__label">Достигают цели</span>
                     </div>
                     <div class="stats__item">
-                        <span class="stats__number">10</span>
+                        <span class="stats__number">7</span>
+                        <span class="stats__label">Языков для изучения</span>
+                    </div>
+                    
+                    <div class="stats__item">
+                        <span class="stats__number">12</span>
                         <span class="stats__label">Лет на рынке</span>
                     </div>
                 </div>
@@ -470,146 +258,285 @@
             <div class="container">
                 <h2 class="languages__title">Какие языки мы преподаём</h2>
                 <p class="languages__subtitle">
-                    От популярного английского до редкого японского — выберите свой язык 
-                    и начните говорить уже на первом занятии.
+                    От популярного английского до редкоcтного китайского — выберите свой язык 
+                    и начните страдать уже при первом занятии
                 </p>
 
                 <div class="languages__grid">
                     <div class="language-card">
-                        <span class="language-card__flag">🇬🇧</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_BRITANIA.jpg">
+                        </div>
                         <div class="language-card__name">Английский</div>
                         <div class="language-card__level">A1 — C2</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇩🇪</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_Germany.svg">
+                        </div>
                         <div class="language-card__name">Немецкий</div>
                         <div class="language-card__level">A1 — C1</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇫🇷</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_France.svg.webp">
+                        </div>
                         <div class="language-card__name">Французский</div>
                         <div class="language-card__level">A1 — C1</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇪🇸</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_the_Kingdom_of_Spain.svg.webp">
+                        </div>
                         <div class="language-card__name">Испанский</div>
                         <div class="language-card__level">A1 — C1</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇮🇹</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_Italy.svg.webp">
+                        </div>
                         <div class="language-card__name">Итальянский</div>
                         <div class="language-card__level">A1 — B2</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇨🇳</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_the_People's_Republic_of_China.svg.webp">
+                        </div>
                         <div class="language-card__name">Китайский</div>
                         <div class="language-card__level">HSK 1 — 5</div>
                     </div>
                     <div class="language-card">
-                        <span class="language-card__flag">🇯🇵</span>
+                        <div class="about__icon">
+                            <img src="img/Flag_of_Japan.svg.webp">
+                        </div>
                         <div class="language-card__name">Японский</div>
                         <div class="language-card__level">N5 — N3</div>
-                    </div>
-                    <div class="language-card">
-                        <span class="language-card__flag">🇷🇺</span>
-                        <div class="language-card__name">Русский как иностранный</div>
-                        <div class="language-card__level">A1 — C1</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ Финальный CTA ============ -->
-        <section class="cta">
-            <div class="container">
-                <h2 class="cta__title">Готовы начать говорить?</h2>
-                <p class="cta__text">
-                    Первый урок — бесплатно! Познакомьтесь с преподавателем, 
-                    определите свой уровень и составьте план обучения.
-                </p>
-                <a href="booking.html" class="btn btn--light btn--large">
-                    Записаться на бесплатный урок
-                </a>
-            </div>
-        </section>
+         <!-- Здесь будет секция преимуществ от МЕНЯ (задача 7) -->
 
-        <!-- Здесь будет секция преимуществ от Виктории (задача 7) -->
-        <!-- Здесь будет слайдер отзывов от Руслана (задача 8) -->
-        <section class="reviews" id="reviews">
+
+         <section class="advantages" id="advantages">
     <div class="container">
-        <h2 class="reviews__title">Отзывы наших учеников</h2>
 
-        <div class="reviews__slider">
-            <button class="reviews__button reviews__button--prev" type="button" aria-label="Предыдущий отзыв">
-                ←
-            </button>
+        <h2 class="advantages__title">
+            Почему именно <span>мы?</span>
+        </h2>
 
-            <div class="reviews__track">
+        <p class="advantages__subtitle">
+            Мы знаем, как правильно, надо и нужно учить языки
+        </p>
 
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/анна.jpg"
-                        alt="Фото Анны"
-                    >
+        <div class="advantages__grid">
 
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Анна</h3>
-                        <p class="review-card__text">
-                            Благодаря школе я наконец перестала бояться
-                            разговаривать на английском. Занятия проходят
-                            интересно и понятно!
-                        </p>
-                    </div>
-                </article>
+            <div class="advantage-card">
+                <div class="advantage-card__icon">
+                    <img src="img/du2.svg" alt="Преподаватели">
+                </div>
 
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/максим.jpg"
-                        alt="Фото Максима"
-                    >
+                <h3 class="advantage-card__title">
+                    Препод сатаны
+                </h3>
 
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Максим</h3>
-                        <p class="review-card__text">
-                            Очень понравился формат занятий. Преподаватель
-                            объясняет сложные темы простыми словами.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="review-card">
-                    <img
-                        class="review-card__photo"
-                        src="img/елена.jpg"
-                        alt="Фото Елены"
-                    >
-
-                    <div class="review-card__content">
-                        <h3 class="review-card__name">Елена</h3>
-                        <p class="review-card__text">
-                            За несколько месяцев я значительно улучшила
-                            свой словарный запас и стала увереннее использовать
-                            английский в повседневной жизни.
-                        </p>
-                    </div>
-                </article>
-
+                <p class="advantage-card__text">
+                    Ни один преподаватель не способен обучать также же эффективно, как это делает ДУ
+                </p>
             </div>
 
-            <button class="reviews__button reviews__button--next" type="button" aria-label="Следующий отзыв">
-                →
-            </button>
+            <div class="advantage-card">
+                <div class="advantage-card__icon">
+                    <img src="img/zap.svg" alt="Результат">
+                </div>
+
+                <h3 class="advantage-card__title">
+                    Фокус на результат
+                </h3>
+
+                <p class="advantage-card__text">
+                    Совёнок ДУ не прощает Ваших ошибок. Лучше подумать 100 раз, прежде чем остаться без пальца
+                </p>
+            </div>
+
+            <div class="advantage-card">
+                <div class="advantage-card__icon">
+                    <img src="img/user.svg" alt="Гибкое расписание">
+                </div>
+
+                <h3 class="advantage-card__title">
+                    История мальчика
+                </h3>
+
+                <p class="advantage-card__text">
+                    Узнайте на всех языках мира, что же произошло с мальчиком после того, как он покинул наш курс
+                </p>
+            </div>
+
+            <div class="advantage-card">
+                <div class="advantage-card__icon">
+                    <img src="img/message-circle.svg" alt="Общение">
+                </div>
+
+                <h3 class="advantage-card__title">
+                    Живое общение
+                </h3>
+
+                <p class="advantage-card__text">
+                    Больше практики, насилия и ситуаций, из-за которых захочется себе что-то сломать
+                </p>
+            </div>
+
         </div>
 
-        <div class="reviews__dots">
-            <button class="reviews__dot reviews__dot--active" type="button" aria-label="Отзыв 1"></button>
-            <button class="reviews__dot" type="button" aria-label="Отзыв 2"></button>
-            <button class="reviews__dot" type="button" aria-label="Отзыв 3"></button>
+    </div>
+</section>
+
+        <!-- ============ Финальный CTA (Я НЕ ЕБУ КТО ЭТО) ============ -->
+        
+
+        <section class="cta">
+    <div class="container">
+
+        <h2 class="cta__title">Готовы начать терпеть?</h2>
+
+        <p class="cta__text">
+            Первый урок всего за 924₽! Познакомьтесь с преподавателем, 
+                    определите свою жалость и составьте план, как себя морально убить.
+        </p>
+
+        <div class="cta__button">
+            <a id="haha" class="btn btn--light btn--large">
+                Нажмите меня
+            </a>
+
+            <!-- <img
+                src="img/g.png"
+                alt=""
+                class="cta__object"
+        -->
+        </div>
+
+    </div>
+</section>
+        
+        <!-- Здесь будет слайдер отзывов от ЯЯЯЯ (задача 8) -->
+
+        <section class="reviews" id="reviews">
+    <div class="container">
+
+        <h2 class="reviews__title">
+            Отзывы <span>учеников</span>
+        </h2>
+
+        <p class="reviews__subtitle">
+            Вот, что говорят наши ученики!
+        </p>
+
+        <div id="reviewsCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <!-- Индикаторы -->
+            <div class="carousel-indicators">
+                <button type="button"
+                        data-bs-target="#reviewsCarousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"></button>
+
+                <button type="button"
+                        data-bs-target="#reviewsCarousel"
+                        data-bs-slide-to="1"></button>
+
+                <button type="button"
+                        data-bs-target="#reviewsCarousel"
+                        data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+    <div class="carousel-item active">
+        <div class="review-card">
+            <div class="review-card__rating">★★★★</div>
+            <p class="review-card__text">
+                Очень понравились занятия. После окончания курса украинского, мне пришла повiстка, и теперь служу Украине. Советую!
+            </p>
+            <div class="review-card__author">
+                <img class="review-card__photo"
+                 src="img/ava1.jpg" alt="тряпка">
+                <div>
+                    <h3>Данил Зайкин</h3>
+                    <span>Украинский язык</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="review-card">
+            <div class="review-card__rating">★★★★★</div>
+            <p class="review-card__text">
+                Ёб**ый рот, как же я еб*л эту сову еб**ую. Что не день, то страдания. Каждый пережитый день стоил как божий дар, ибо ничего человечного в этой ху**е нет. Но поскольку я хочу покончить с собой и отмыть перед этим свои грехи, этот курс мне идеально подошёл.
+            </p>
+            <div class="review-card__author">
+                <img class="review-card__photo"
+                src="img/d.jpg" alt="Лох">
+                <div>
+                    <h3>Максим Максим</h3>
+                    <span>Китайский язык</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="review-card">
+            <div class="review-card__rating">★★</div>
+            <p class="review-card__text">
+                б*я я думал я хоть чему то стоищему научусь [стикер] но нет на**й я попал в клуб отбитых фриков [стикер] подобие меня [стикер] кстати после курса мне диагностировали футофобию [стикер]
+            </p>
+            <div class="review-card__author">
+                <img class="review-card__photo" 
+                src="img/ava2.jpg" alt="Хуесос">
+                <div>
+                    <h3>Вадим d0lb53v</h3>
+                    <span>Английский язык</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            <!-- Назад -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#reviewsCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">
+                    Предыдущий
+                </span>
+            </button>
+
+            <!-- Вперёд -->
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#reviewsCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">
+                    Следующий
+                </span>
+            </button>
+
         </div>
     </div>
 </section>
+        
 <script src="js/slider.js"></script>
     </main>
 
@@ -619,9 +546,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3 class="footer-title">Название сайта</h3>
+                    <img class="footer-title" src="img/logo.png" width="120" alt="Killolingo">
                     <p class="footer-description">
-                        Современная языковая школа для изучения иностранных языков. Имба ЖЕСТЬ. Не верите?? Запишитесь, твари!
+                        Современная языковая школа для изучения иностранных языков. Имба ЖЕСТЬ. Не верите?? Запишитесь!
                     </p>
                 </div>
     
@@ -630,18 +557,17 @@
                     <address class="footer-contacts">
                         <p>
                             <strong>Адрес:</strong><br>
-                            г. Москва, ул. Примерная, д. 10
-                        </p>
+                            Москва, Варшавское шоссе, 26с11
                         <p>
                             <strong>Телефон:</strong><br>
                             <a href="tel:+88005553535">
-                                +7 (495) 123-45-67
+                                8 (800) 200-01-22
                             </a>
                         </p>
                         <p>
                             <strong>Email:</strong><br>
                             <a href="mailto:Mucixmatho@ya.ru">
-                                Mucixmatho@ya.ru
+                                Killolingo@ya.ru
                             </a>
                         </p>
                     </address>
@@ -652,16 +578,58 @@
                     <nav class="footer-nav" aria-label="Навигация в подвале">
                         <a href="index.html">Главная</a>
                         <a href="courses.html">Курсы</a>
-                        <a href="booking.html">Записаться на урок</a>
+                        <a id="haha2">Записаться на урок</a>
                     </nav>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>
-                    &copy; 2026 ??Название сайта??. Все права защищены.
+                    &copy; 2026 Killolingo. Все права не защищены законом 105 УК РФ
                 </p>
             </div>
         </div>
     </footer>
 </body>
+<script>
+const sound = new Audio("img/hui2.mp3");
+
+document.getElementById('haha').addEventListener('click', () => {
+    sound.play();
+});
+document.getElementById('haha2').addEventListener('click', () => {
+    sound.play();
+});
+document.getElementById('haha3').addEventListener('click', () => {
+    sound.play();
+});
+
+document.getElementById('haha3').addEventListener('click', () => {
+
+    window.open('booking.html', '_blank');
+
+});
+
+document.getElementById('haha2').addEventListener('click', () => {
+
+    window.open('booking.html', '_blank');
+
+});
+
+document.getElementById('haha').addEventListener('click', () => {
+
+    window.open('booking.html', '_blank');
+
+});
+
+document.getElementById('haha4').addEventListener('click', () => {
+
+    window.open('booking.html', '_blank');
+
+});
+
+document.getElementById('haha4').addEventListener('click', () => {
+    sound.play();
+});
+
+</script>
 </html>
