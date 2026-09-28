@@ -3,33 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курсы — Lingua</title>
-
+    <title>Курсы</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Общие стили проекта: эти файлы уже должны быть в общем репозитории -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/calculator.css">
+    
 </head>
 
 <body>
     <main>
-        <section class="courses">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/logo.png" alt="" width="160" height="48">
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">ГЛАВНАЯ</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">КУРСЫ</a></li>
+        <li class="nav-item"><a class="nav-link" id="haha3">ЗАКЛЮЧИТЬ КОНТРАКТ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<selection class="pad2">
+        </selection>
+
+<section class="about" id="about">
             <div class="container">
-                <div class="section-heading">
-                    <span class="section-heading__label">LINGUA</span>
-                    <h1 class="section-heading__title">Наши курсы</h1>
-                    <p class="section-heading__text">
-                        Выберите программу обучения под свою цель и уровень языка.
+                <div class="about__header">
+                    <h2 class="about__title">
+                        Наши круги <span>ада</span>
+                    </h2>
+                    <p class="about__lead">
+                        Веберите программу обучения под свою цель и уровень своей бесмысленной жизни 
                     </p>
                 </div>
+            </div>
+        <section class="courses">
+            <div class="container">
+                
 
                 <!-- Вариант 10: сетка каталога курсов -->
                 <div class="courses__grid">
 
                     <article class="course-card">
                         <div class="course-card__image course-card__image--english">
-                            <span>ENGLISH</span>
+                            <img src="img/11.jpg" alt="eng">
                         </div>
 
                         <div class="course-card__content">
@@ -46,7 +73,7 @@
 
                     <article class="course-card">
                         <div class="course-card__image course-card__image--speaking">
-                            <span>SPEAK</span>
+                            <img src="img/2.jpg" alt="eng">
                         </div>
 
                         <div class="course-card__content">
@@ -54,16 +81,15 @@
                                 Разговорный клуб
                             </h2>
                             <p class="course-card__description">
-                                Практика живого общения, расширение словарного
-                                запаса и развитие уверенности в разговоре.
+                                Мы не имеем права провозглашать первое правило разговорного клуба. Меньше знаешь, крепче спишь
                             </p>
-                            <p class="course-card__price">от 2 900 ₽/мес.</p>
+                            <p class="course-card__price">Недоступно</p>
                         </div>
                     </article>
 
                     <article class="course-card">
                         <div class="course-card__image course-card__image--ielts">
-                            <span>IELTS</span>
+                            <img src="img/4.jpg" alt="eng">
                         </div>
 
                         <div class="course-card__content">
@@ -80,7 +106,7 @@
 
                     <article class="course-card">
                         <div class="course-card__image course-card__image--business">
-                            <span>BUSINESS</span>
+                            <img src="img/3.jpg" alt="eng">
                         </div>
 
                         <div class="course-card__content">
@@ -88,9 +114,7 @@
                                 Английский для бизнеса
                             </h2>
                             <p class="course-card__description">
-                                Деловая переписка, переговоры, презентации и
-08:53
-профессиональная коммуникация на английском.
+                                Деловая переписка, переговоры, презентации и профессиональная коммуникация на английском.
                             </p>
                             <p class="course-card__price">от 6 400 ₽/мес.</p>
                         </div>
@@ -121,9 +145,9 @@
                         <!-- Поле: Тариф (радиокнопки) -->
                         <div class="calculator__field">
                             <span>Тариф:</span>
-                            <label> <input type="radio" name="tariff" value="1.0" checked> Выгодный </label>
-                            <label> <input type="radio" name="tariff" value="1.2"> Комфортный </label>
-                            <label> <input type="radio" name="tariff" value="1.5"> Усиленный </label>
+                            <label> <input type="radio" name="tariff" value="1.0" checked> Нищета </label>
+                            <label> <input type="radio" name="tariff" value="1.2"> Дешёвка </label>
+                            <label> <input type="radio" name="tariff" value="1.5"> Достойный </label>
                         </div>
                     </form>
 
@@ -136,35 +160,34 @@
         </section>
     </main>
     <script src="js/calculator.js"></script>
-    <!-- кто удалит тот лох (менять текст можжно)-->
+    
+    <!-- КТО УДАЛИТ, ТОТ ЛОХ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3 class="footer-title">Название сайта</h3>
+                    <img class="footer-title" src="img/logo.png" width="120" alt="Killolingo">
                     <p class="footer-description">
-                        Современная языковая школа для изучения иностранных языков. Имба ЖЕСТЬ. Не верите?? Запишитесь, твари!
+                        Современная языковая школа для изучения иностранных языков. Имба ЖЕСТЬ. Не верите?? Запишитесь!
                     </p>
                 </div>
+    
                 <div class="footer-column">
                     <h3 class="footer-title">Контакты</h3>
-    
                     <address class="footer-contacts">
                         <p>
                             <strong>Адрес:</strong><br>
-                            г. Москва, ул. Примерная, д. 10
-                        </p>
-    
+                            Москва, Варшавское шоссе, 26с11
                         <p>
                             <strong>Телефон:</strong><br>
                             <a href="tel:+88005553535">
-                                +7 (495) 123-45-67
+                                8 (800) 200-01-22
                             </a>
                         </p>
                         <p>
                             <strong>Email:</strong><br>
                             <a href="mailto:Mucixmatho@ya.ru">
-                                Mucixmatho@ya.ru
+                                Killolingo@ya.ru
                             </a>
                         </p>
                     </address>
@@ -175,16 +198,17 @@
                     <nav class="footer-nav" aria-label="Навигация в подвале">
                         <a href="index.html">Главная</a>
                         <a href="courses.html">Курсы</a>
-                        <a href="booking.html">Записаться на урок</a>
+                        <a id="haha2">Записаться на урок</a>
                     </nav>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>
-                    &copy; 2026 ??Название сайта??. Все права защищены.
+                    &copy; 2026 Killolingo. Все права не защищены законом 105 УК РФ
                 </p>
             </div>
         </div>
     </footer>
+    <script src="js/suka.js"></script>
 </body>
 </html>
