@@ -7,7 +7,7 @@
        но лучше уточнить у него. Пока используем заглушки: */
     /* background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); */
     
-    padding: 120px 0; /* Большие отступы для "воздуха" */
+    padding: 10px 0; /* Большие отступы для "воздуха" */
     display: flex;
     align-items: center;
     justify-content: center;
