@@ -784,8 +784,7 @@ main {
 
 .cta {
     padding: 80px 0;
-
-    background: var(--color-primary);
+    background-image: url("img/fe.jpg")
     color: var(--color-text-inverse);
 
     text-align: center;
