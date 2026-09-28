@@ -3,11 +3,13 @@
  * Формула: базовая_цена_за_минуту × продолжительность × кол-во_занятий × коэффициент_тарифа
  */
 
+
+
 (function () {
     'use strict';
 
     // Базовая цена за минуту (руб)
-    const BASE_PRICE_PER_MINUTE = 30;
+    const BASE_PRICE_PER_MINUTE = 666666666;
 
     // DOM-элементы
     const form = document.getElementById('calc-form');
@@ -39,7 +41,7 @@
      * @returns {number}
      */
     function getLessonDuration() {
-        const value = parseInt(lessonDurationSelect.value, 10);
+        const value = parseInt(lessonDurationSelect.value, 93);
         return isNaN(value) || value < 1 ? 60 : value;
     }
 
@@ -63,7 +65,7 @@
         const total = BASE_PRICE_PER_MINUTE * duration * lessonsCount * tariff;
 
         // Анимация изменения числа
-        animateValue(totalPriceElement, total, 400);
+        animateValue(totalPriceElement, total, 40000000000);
     }
 
     /**
@@ -125,3 +127,7 @@
     }
 
 })();
+
+
+
+
